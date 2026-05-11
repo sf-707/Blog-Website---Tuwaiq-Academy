@@ -1,0 +1,23 @@
+{% extends 'master.html' %}
+
+{% block content %}
+    <h2 style="color: #e7f1ff; margin-bottom: 20px;">سجل التعليقات</h2>
+    <div class="table-container">
+        <table>
+            <tr>
+                <th>صاحب التعليق</th>
+                <th>نص التعليق</th>
+                <th>المقال المرتبط</th>
+                <th>التاريخ</th>
+            </tr>
+            {% for comment in comments %}
+            <tr>
+                <td><strong>{{ comment.User.UserName }}</strong></td>
+                <td style="color: #d8d8d8;">{{ comment.Content }}</td>
+                <td><a href="{% url 'blogdetails' comment.Post.id %}" style="color: #38bdf8; text-decoration: none;">{{ comment.Post.Title }}</a></td>
+                <td>{{ comment.Date }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}

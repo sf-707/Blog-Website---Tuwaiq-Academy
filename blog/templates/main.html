@@ -1,0 +1,36 @@
+{% extends 'master.html' %}
+
+{% block content %}
+    <h2 style="color: #ddf6ff; margin-bottom: 5px;">مرحباً بك في لوحة التحكم</h2>
+    <p style="color: #b2d4e5; margin-bottom: 30px;">نظرة عامة على إدارة المحتوى الخاص بك</p>
+
+    <div class="cards-grid">
+        <a href="{% url 'users' %}" style="text-decoration: none; color: inherit;">
+            <div class="card" style="text-align: center; border-top-color: #e74c3c;">
+                <h3> إدارة المستخدمين</h3>
+                <p>عرض وتعديل صلاحيات الأعضاء</p>
+            </div>
+        </a>
+
+        <a href="{% url 'categories' %}" style="text-decoration: none; color: inherit;">
+            <div class="card" style="text-align: center; border-top-color: #f39c12;">
+                <h3> التصنيفات</h3>
+                <p>إدارة الأقسام وتصنيف المحتوى</p>
+            </div>
+        </a>
+
+        <a href="{% url 'blogs' %}" style="text-decoration: none; color: inherit;">
+            <div class="card" style="text-align: center; border-top-color: #38bdf8;">
+                <h3> المقالات</h3>
+                <p>استعراض ونشر التدوينات الجديدة</p>
+            </div>
+        </a>
+
+        <a href="{% url 'comments' %}" style="text-decoration: none; color: inherit;">
+            <div class="card" style="text-align: center; border-top-color: #9b59b6;">
+                <h3> التعليقات</h3>
+                <p>مراجعة تفاعلات الزوار</p>
+            </div>
+        </a>
+    </div>
+{% endblock %}

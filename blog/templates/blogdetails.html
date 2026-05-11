@@ -1,0 +1,17 @@
+{% extends 'master.html' %}
+
+{% block content %}
+    <div style="background: #1e293b; padding: 40px; border-radius: 16px; box-shadow: 0 8px 20px rgba(0,0,0,0.2);">
+        <span class="tag">{{ post.Category.Name }}</span>
+        <h1 style="color: #f8fafc; margin-top: 15px; font-size: 2rem;">{{ post.Title }}</h1>
+        <p style="color: #92a6bc; border-bottom: 1px solid #51678a; padding-bottom: 20px; margin-bottom: 20px;">
+            📅 نُشر في: {{ post.Date }}
+        </p>
+
+        <div style="line-height: 1.8; font-size: 1.15em; color: #e2e8f0;">
+            <p>{{ post.Content }}</p>
+        </div>
+
+        <a href="{% url 'blogs' %}" class="btn">&larr; العودة لقائمة المقالات</a>
+    </div>
+{% endblock %}

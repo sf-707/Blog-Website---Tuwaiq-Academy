@@ -1,0 +1,19 @@
+{% extends 'master.html' %}
+
+{% block content %}
+    <h2 style="color: #deecff; padding-bottom: 10px;">أحدث المقالات</h2>
+
+    <div class="cards-grid">
+        {% for post in posts %}
+            <a href="{% url 'blogdetails' post.id %}" class="card-link">
+                <div class="card">
+                    <span class="tag">{{ post.Category.Name }}</span>
+                    <h3>{{ post.Title }}</h3>
+                    <div class="meta">
+                         تاريخ النشر: {{ post.Date }}
+                    </div>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+{% endblock %}

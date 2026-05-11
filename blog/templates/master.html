@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Website</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<header>
+        <div class="header-container">
+            <nav>
+                <a href="{% url 'main' %}" class="{% if request.resolver_match.url_name == 'main' %}active{% endif %}">الرئيسية</a>
+                <a href="{% url 'users' %}" class="{% if request.resolver_match.url_name == 'users' %}active{% endif %}">المستخدمين</a>
+                <a href="{% url 'categories' %}" class="{% if request.resolver_match.url_name == 'categories' %}active{% endif %}">التصنيفات</a>
+                <a href="{% url 'blogs' %}" class="{% if request.resolver_match.url_name == 'blogs' or request.resolver_match.url_name == 'blogdetails' %}active{% endif %}">المقالات</a>
+                <a href="{% url 'comments' %}" class="{% if request.resolver_match.url_name == 'comments' %}active{% endif %}">التعليقات</a>
+            </nav>
+            <h1>نظام إدارة المدونة</h1>
+        </div>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2026 تم التطوير بواسطة صفوان مشهور الغامدي</p>
+    </footer>
+
+</body>
+</html>

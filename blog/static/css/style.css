@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap');
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+
+body {
+    font-family: 'Tajawal', sans-serif;
+    margin: 0;
+    background-color: #0f172a;
+    color: #e2e8f0;
+    direction: rtl;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* الهيدر */
+header {
+    background-color: #1e293b;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    border-bottom: 1px solid #334155;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 15px 30px;
+    width: 100%;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #f8fafc;
+    letter-spacing: 0.5px;
+}
+
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 0;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+ nav a.active {
+    color: #38bdf8;
+    border-bottom: 2px solid #38bdf8;
+     transition: all 0.3s ease;
+}
+nav a:hover{
+    color: #ebf8ff;
+    border-bottom: 2px solid #ebf8ff;
+    transition: all 0.3s ease;
+}
+/* المحتوى الرئيسي */
+main {
+    padding: 30px 15px;
+    max-width: 1100px;
+    margin: 0 auto;
+    flex: 1;
+    width: 100%;
+}
+
+/* نظام البطاقات */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.card {
+    background: #1e293b;
+    border-radius: 12px;
+    padding: 30px 25px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-top: 4px solid #2e9fd1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    background: #263249;
+    transition: all 0.3s ease;
+}
+/* هذا الكلاس للرابط اللي غلفنا فيه البطاقة */
+.card-link {
+    text-decoration: none !important; /* إلغاء الخط السفلي نهائياً */
+    color: inherit !important; /* جعل ألوان النصوص داخل البطاقة كما هي (ترث لون الـ div) */
+    display: block; /* عشان الرابط ياخذ كامل العرض */
+}
+
+/* عشان نضمن إن حركة الـ Hover (الارتفاع) تظل شغالة صح */
+.card-link:hover .card {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+}
+.card h3 {
+    margin: 0 0 10px 0;
+    color: #cedeef;
+    font-size: 1.3rem;
+}
+
+.card p {
+    color: #afbad0;
+    margin-bottom: 0;
+    line-height: 1.6;
+}
+
+.card a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.card .meta {
+    font-size: 0.85em;
+    color: #a6badd;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #506385;
+}
+
+
+.table-container {
+    background: #1e293b;
+    border-radius: 12px;
+    padding: 5px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+}
+
+th, td {
+    padding: 16px 20px;
+    text-align: right;
+    border-bottom: 1px solid #43556e;
+    color: #e2e8f0;
+    vertical-align: middle;
+}
+
+th {
+    background-color: #0f172a;
+    color: #4ac5ff;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+tr:hover {
+    background-color: #283548;
+}
+
+
+td a {
+    display: inline-block;
+    background: rgba(56, 189, 248, 0.15);
+    color: #38bdf8;
+    padding: 6px 12px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+td a:hover {
+    background: rgba(56, 189, 248, 0.3);
+}
+
+/* التصنيفات والأزرار */
+.tag {
+    display: inline-block;
+    background: rgba(56, 189, 248, 0.15);
+    color: #38bdf8;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-bottom: 15px;
+    width: fit-content;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #38bdf8;
+    color: #0f172a;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-top: 25px;
+    border: none;
+}
+
+.btn:hover {
+    background-color: #0ea5e9;
+}
+
+/* الفوتر */
+footer {
+    background-color: #1c233c;
+    color: #96a5ba;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    border-top: 1px solid #1e293b;
+}
+
+/* تجاوب الجوال */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column-reverse;
+        gap: 15px;
+    }
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

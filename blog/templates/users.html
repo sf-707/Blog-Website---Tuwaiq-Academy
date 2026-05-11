@@ -1,0 +1,21 @@
+{% extends 'master.html' %}
+
+{% block content %}
+    <h2 style="color: #daedfe; margin-bottom: 20px;">قائمة المستخدمين</h2>
+    <div class="table-container">
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>اسم المستخدم</th>
+                <th>البريد الإلكتروني</th>
+            </tr>
+            {% for user in users %}
+            <tr>
+                <td>#{{ user.id }}</td>
+                <td><strong>{{ user.UserName }}</strong></td>
+                <td>{{ user.Email }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}

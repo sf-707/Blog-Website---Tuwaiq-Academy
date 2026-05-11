@@ -1,0 +1,26 @@
+{% extends 'master.html' %}
+
+{% block content %}
+    <h2 style="color: #e2efff; padding-bottom: 10px; margin-bottom: 20px;">تصنيفات المدونة</h2>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 400px;">رقم التصنيف (ID)</th>
+                    <th>اسم التصنيف</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for category in categories %}
+                <tr>
+                    <td>#{{ category.id }}</td>
+                    <td style="font-weight: bold; color: #ffffff;">{{ category.Name }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+{% endblock %}
