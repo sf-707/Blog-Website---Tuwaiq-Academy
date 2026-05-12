@@ -12,21 +12,24 @@ def users(request):
     context = {'users': all_users}
     return render(request, 'users.html', context)
 
+
 def categories(request):
     all_categories = Category.objects.all()
     context = {'categories': all_categories}
     return render(request, 'categories.html', context)
+
 
 def blogs(request):
     all_posts = Post.objects.all()
     context = {'posts': all_posts}
     return render(request, 'blogs.html', context)
 
+
 def blogdetails(request, id):
-    # سحب مقال واحد فقط يطابق الـ id
     single_post = Post.objects.get(id=id)
     context = {'post': single_post}
     return render(request, 'blogdetails.html', context)
+
 
 def comments(request):
     all_comments = Comment.objects.all()
